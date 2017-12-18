@@ -28,5 +28,13 @@ namespace Greeting.Test
 
             Assert.AreEqual("Hello, my friend.", result);
         }
+
+        [TestMethod]
+        public void GreetShouting()
+        {
+            string result = _greetings.Greet("JERRY");
+
+            Assert.AreEqual("HELLO JERRY!", result);
+        }
     }
 }
