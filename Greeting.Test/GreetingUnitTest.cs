@@ -10,7 +10,7 @@ namespace Greeting.Test
         public void GreetSingleName()
         {
             var greetings = new Greetings();
-            var result = greetings.Greet("Bob");
+            string result = greetings.Greet("Bob");
 
             Assert.AreEqual("Hello, Bob.", result);
 
