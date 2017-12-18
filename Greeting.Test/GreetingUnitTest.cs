@@ -6,14 +6,27 @@ namespace Greeting.Test
     [TestClass]
     public class GreetingUnitTest
     {
+        private Greetings _greetings;
+
+        [TestInitialize]
+        public void InitTest()
+        {
+            _greetings = new Greetings();
+        }
         [TestMethod]
         public void GreetSingleName()
         {
-            var greetings = new Greetings();
-            string result = greetings.Greet("Bob");
+            string result = _greetings.Greet("Bob");
 
             Assert.AreEqual("Hello, Bob.", result);
+        }
 
+        [TestMethod]
+        public void GreetNoName()
+        {
+            string result = _greetings.Greet(null);
+
+            Assert.AreEqual("Hello, my friend.", result);
         }
     }
 }
