@@ -22,15 +22,12 @@
 
         public string Greet(params string[] names)
         {
-            if(names == null)
+            if(names == null || names.Length == 0 || (names.Length == 1 && string.IsNullOrEmpty(names[0])))
                 return StartNormalGreet + DefaultName + EndNormalGreet;
             switch (names.Length)
             {
-                case 0:
-                    return StartNormalGreet + DefaultName + EndNormalGreet;
+               
                 case 1:
-                    if (string.IsNullOrEmpty(names[0]))
-                        return StartNormalGreet + DefaultName + EndNormalGreet;
                     return IsShouting(names[0]) ?
                         StartShoutingGreet + names[0] + EndShoutingGreet:
                         StartNormalGreet + names[0] + EndNormalGreet;
