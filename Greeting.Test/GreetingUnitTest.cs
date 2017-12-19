@@ -13,6 +13,7 @@ namespace Greeting.Test
         {
             _greetings = new Greetings();
         }
+
         [TestMethod]
         public void GreetSingleName()
         {
@@ -48,5 +49,12 @@ namespace Greeting.Test
 
             Assert.AreEqual("Hello, JeRRy.", result);
         }
+
+        [TestMethod]
+        public void GreetTwoNames()
+        {
+            string result = _greetings.Greet("Jill", "Jane");
+            Assert.AreEqual("Hello, Jill and Jane.", result);
+        }
     }
-}
+ }
